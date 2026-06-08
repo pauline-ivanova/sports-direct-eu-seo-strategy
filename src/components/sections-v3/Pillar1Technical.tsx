@@ -16,7 +16,7 @@ export function Pillar1Technical() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left: The Problem */}
-        <div className="lg:col-span-5 flex flex-col">
+        <div className="lg:col-span-6 flex flex-col">
           <div className="flex-1 p-8 bg-[#ED0000]/5 rounded-2xl border border-[#ED0000]/10 flex flex-col justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-2 bg-[#ED0000]/10 rounded-xl">
@@ -34,7 +34,7 @@ export function Pillar1Technical() {
         </div>
 
         {/* Right: The Solution */}
-        <div className="lg:col-span-7 flex flex-col justify-center">
+        <div className="lg:col-span-6 flex flex-col justify-center">
           <div className="mb-6">
             <h3 className="text-xl font-semibold text-zinc-900" suppressHydrationWarning>The Resolution</h3>
           </div>
