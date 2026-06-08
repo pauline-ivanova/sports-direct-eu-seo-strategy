@@ -116,39 +116,11 @@ export default function PresentationV3() {
             </FadeIn>
           </Slide>
 
-          <Slide id="transition-5">
-            <FadeIn><StoryTransition text="To maximize yield, this expansion must be precisely calibrated to UK search behavior." /></FadeIn>
-          </Slide>
-
-          <Slide id="pillar-3">
-            <FadeIn><Pillar3International /></FadeIn>
-          </Slide>
-
-          <Slide id="insight-3">
-            <FadeIn>
-              <div className="flex flex-col items-center justify-center text-center space-y-8 w-full h-full max-w-4xl mx-auto">
-                <div className="w-16 h-16 rounded-2xl bg-[#ED0000]/10 flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ED0000]">
-                    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.3 1.5 1.5 2.5" />
-                    <path d="M9 18h6" />
-                    <path d="M10 22h4" />
-                  </svg>
-                </div>
-                <h3 className="text-3xl md:text-4xl font-semibold text-zinc-900 leading-tight">
-                  Existing traffic represents only a fraction of the addressable market.
-                </h3>
-                <p className="text-xl md:text-2xl text-zinc-500 leading-relaxed max-w-3xl">
-                  By resolving technical friction and aligning taxonomy with localized UK search intent, we can systematically convert latent demand into <strong>measurable revenue growth</strong>.
-                </p>
-              </div>
-            </FadeIn>
-          </Slide>
-
           <Slide id="transition-6">
             <FadeIn><StoryTransition text="Acquisition is only the first half of the equation; the final step is optimizing for conversion." /></FadeIn>
           </Slide>
 
-          <Slide id="pillar-4">
+          <Slide id="pillar-3">
             <FadeIn><Pillar4Conversion /></FadeIn>
           </Slide>
 

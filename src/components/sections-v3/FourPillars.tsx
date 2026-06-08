@@ -14,13 +14,8 @@ const pillars = [
     description: "Programmatically scaling indexable paths to capture long-tail demand.",
   },
   {
-    icon: <MapPin className="w-6 h-6" />,
-    title: "3. UK Localization",
-    description: "Aligning taxonomy and content strictly with UK search behavior.",
-  },
-  {
     icon: <MousePointerClick className="w-6 h-6" />,
-    title: "4. Conversion Optimization",
+    title: "3. Conversion Optimization",
     description: "Removing friction from the user journey to maximize revenue per session.",
   },
 ];
@@ -35,7 +30,7 @@ export function FourPillars() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {pillars.map((pillar, idx) => (
           <div key={idx} className="flex flex-col gap-4 p-6 border border-zinc-200 rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md group h-full">
             <div className="w-12 h-12 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-900 transition-colors duration-300 group-hover:bg-[#ED0000]/10 group-hover:text-[#ED0000]">

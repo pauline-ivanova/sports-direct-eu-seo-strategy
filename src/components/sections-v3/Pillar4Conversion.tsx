@@ -8,7 +8,7 @@ export function Pillar4Conversion() {
     <div className="space-y-8">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <SectionBadge section="Part 2" title="Strategic Pillars" pillar="Pillar 4" />
+          <SectionBadge section="Part 2" title="Strategic Pillars" pillar="Pillar 3" />
           <h2 className="text-3xl font-bold tracking-tight text-zinc-900" suppressHydrationWarning>Conversion Optimization</h2>
           <p className="mt-4 text-zinc-500 text-lg">
             Maximizing the commercial yield of acquired traffic.
