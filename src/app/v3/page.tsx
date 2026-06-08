@@ -72,20 +72,8 @@ export default function PresentationV3() {
             <FadeIn><MarketLandscape /></FadeIn>
           </Slide>
 
-          <Slide id="market-reality">
-            <FadeIn><MarketReality /></FadeIn>
-          </Slide>
-
-          <Slide id="transition-2">
-            <FadeIn><StoryTransition text="Addressing these structural gaps requires a disciplined, data-driven methodology." /></FadeIn>
-          </Slide>
-
-          <Slide id="philosophy">
-            <FadeIn><Philosophy /></FadeIn>
-          </Slide>
-
           <Slide id="transition-3">
-            <FadeIn><StoryTransition text="These principles inform the four strategic pillars of our growth plan." /></FadeIn>
+            <FadeIn><StoryTransition text="Our growth plan is built on four strategic pillars." /></FadeIn>
           </Slide>
 
           <Slide id="four-pillars">

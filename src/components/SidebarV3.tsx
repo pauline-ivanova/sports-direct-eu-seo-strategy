@@ -11,8 +11,6 @@ const NAV_ITEMS = [
   { id: "core-focus", label: "Focus Areas" },
   { id: "foundation", label: "The Foundation" },
   { id: "market-landscape", label: "Landscape" },
-  { id: "market-reality", label: "Insights" },
-  { id: "philosophy", label: "Philosophy" },
   { id: "four-pillars", label: "Strategic Pillars" },
   { id: "pillar-1", label: "Pillar 1: Technical" },
   { id: "pillar-2", label: "Pillar 2: Expansion" },
