@@ -32,6 +32,19 @@ export function Sidebar() {
   const [rightMenuOpen, setRightMenuOpen] = useState(false);
   const leftMenuRef = useRef<HTMLDivElement>(null);
   const rightMenuRef = useRef<HTMLDivElement>(null);
+  const mobileNavRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Scroll mobile nav to active item
+    if (mobileNavRef.current) {
+      const activeEl = document.getElementById(`nav-mobile-${activeSection}`);
+      if (activeEl) {
+        const container = mobileNavRef.current;
+        const scrollLeft = activeEl.offsetLeft - container.offsetWidth / 2 + activeEl.offsetWidth / 2;
+        container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+      }
+    }
+  }, [activeSection]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -71,7 +84,7 @@ export function Sidebar() {
       },
       { 
         root: mainEl,
-        rootMargin: "-40% 0px -50% 0px" 
+        rootMargin: "-20% 0px -40% 0px" 
       }
     );
 
@@ -131,120 +144,166 @@ export function Sidebar() {
       <header 
         className={cn(
           "fixed top-0 left-0 right-0 z-50 bg-white border-b border-zinc-200 transition-all duration-300",
-          scrolled ? "shadow-sm py-3" : "py-5"
+          scrolled ? "shadow-sm py-2 md:py-3" : "py-3 md:py-5"
         )}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <div className="flex-shrink-0 flex items-center gap-4 border-r border-zinc-200 pr-6 w-[180px]">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between gap-4 md:gap-0">
+          <div className="flex-shrink-0 flex items-center gap-4 md:border-r border-zinc-200 md:pr-6 md:w-[180px]">
             <Image 
               src="/Sports-Direct-2020.svg" 
               alt="Sports Direct Logo" 
               width={120} 
               height={24} 
-              className="w-auto h-6 object-contain"
+              className="w-auto h-5 md:h-6 object-contain"
             />
           </div>
           
-          <nav className="flex-1 flex justify-center overflow-visible">
-            <div className="flex items-center gap-1 sm:gap-2">
-              {startIndex > 0 && (
-                <div className="relative" ref={leftMenuRef}>
-                  <button
-                    onClick={() => setLeftMenuOpen(!leftMenuOpen)}
-                    className={cn(
-                      "p-2 text-zinc-400 hover:text-zinc-900 transition-colors rounded-full hover:bg-zinc-100 flex items-center justify-center",
-                      leftMenuOpen && "bg-zinc-100 text-zinc-900"
+          <nav ref={mobileNavRef} className="flex-1 flex justify-start md:justify-center overflow-x-auto scrollbar-hide relative">
+            <div className="flex items-center gap-1 sm:gap-2 min-w-max">
+              {/* Desktop Left Menu Button */}
+              <div className="hidden md:block">
+                {startIndex > 0 && (
+                  <div className="relative" ref={leftMenuRef}>
+                    <button
+                      onClick={() => setLeftMenuOpen(!leftMenuOpen)}
+                      className={cn(
+                        "p-2 text-zinc-400 hover:text-zinc-900 transition-colors rounded-full hover:bg-zinc-100 flex items-center justify-center",
+                        leftMenuOpen && "bg-zinc-100 text-zinc-900"
+                      )}
+                      aria-label="Previous sections"
+                    >
+                      <MoreHorizontal className="w-4 h-4" />
+                    </button>
+                    {leftMenuOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-zinc-200 py-2 flex flex-col gap-1 z-50">
+                        {leftHiddenItems.map((item) => (
+                          <a
+                            key={item.id}
+                            href={`#${item.id}`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleNavClick(item.id);
+                            }}
+                            className="px-4 py-2 text-[13px] font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-all text-left mx-2 rounded-md"
+                          >
+                            {item.label}
+                          </a>
+                        ))}
+                      </div>
                     )}
-                    aria-label="Previous sections"
-                  >
-                    <MoreHorizontal className="w-4 h-4" />
-                  </button>
-                  {leftMenuOpen && (
-                    <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-zinc-200 py-2 flex flex-col gap-1 z-50">
-                      {leftHiddenItems.map((item) => (
-                        <a
-                          key={item.id}
-                          href={`#${item.id}`}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleNavClick(item.id);
-                          }}
-                          className="px-4 py-2 text-[13px] font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-all text-left mx-2 rounded-md"
-                        >
-                          {item.label}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
+                  </div>
+                )}
+              </div>
               
-              {visibleItems.map((item) => {
-                const isActive = activeSection === item.id;
-                return (
-                  <a
-                    id={`nav-${item.id}`}
-                    key={item.id}
-                    href={`#${item.id}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(item.id);
-                    }}
-                    className={cn(
-                      "relative px-3 sm:px-4 py-2 text-[13px] font-medium rounded-full transition-colors whitespace-nowrap duration-300",
-                      isActive
-                        ? "text-white"
-                        : "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100"
-                    )}
-                  >
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeNavBackground"
-                        className="absolute inset-0 bg-zinc-900 rounded-full shadow-sm"
-                        initial={false}
-                        transition={{
-                          type: "spring",
-                          stiffness: 380,
-                          damping: 30,
-                        }}
-                      />
-                    )}
-                    <span className="relative z-10">{item.label}</span>
-                  </a>
-                );
-              })}
-
-              {endIndex < NAV_ITEMS.length - 1 && (
-                <div className="relative" ref={rightMenuRef}>
-                  <button
-                    onClick={() => setRightMenuOpen(!rightMenuOpen)}
-                    className={cn(
-                      "p-2 text-zinc-400 hover:text-zinc-900 transition-colors rounded-full hover:bg-zinc-100 flex items-center justify-center",
-                      rightMenuOpen && "bg-zinc-100 text-zinc-900"
-                    )}
-                    aria-label="Next sections"
-                  >
-                    <MoreHorizontal className="w-4 h-4" />
-                  </button>
-                  {rightMenuOpen && (
-                    <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-zinc-200 py-2 flex flex-col gap-1 z-50">
-                      {rightHiddenItems.map((item) => (
-                        <a
-                          key={item.id}
-                          href={`#${item.id}`}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleNavClick(item.id);
+              {/* Mobile: Show all items. Desktop: Show visibleItems */}
+              <div className="flex md:hidden items-center gap-1">
+                {NAV_ITEMS.map((item) => {
+                  const isActive = activeSection === item.id;
+                  return (
+                    <a
+                      id={`nav-mobile-${item.id}`}
+                      key={`mobile-${item.id}`}
+                      href={`#${item.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick(item.id);
+                      }}
+                      className={cn(
+                        "relative px-3 py-1.5 text-[12px] font-medium rounded-full transition-colors whitespace-nowrap duration-300",
+                        isActive
+                          ? "text-white"
+                          : "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100"
+                      )}
+                    >
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeNavBackgroundMobile"
+                          className="absolute inset-0 bg-zinc-900 rounded-full shadow-sm"
+                          initial={false}
+                          transition={{
+                            type: "spring",
+                            stiffness: 380,
+                            damping: 30,
                           }}
-                          className="px-4 py-2 text-[13px] font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-all text-left mx-2 rounded-md"
-                        >
-                          {item.label}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
+                        />
+                      )}
+                      <span className="relative z-10">{item.label}</span>
+                    </a>
+                  );
+                })}
+              </div>
+
+              <div className="hidden md:flex items-center gap-1 sm:gap-2">
+                {visibleItems.map((item) => {
+                  const isActive = activeSection === item.id;
+                  return (
+                    <a
+                      id={`nav-${item.id}`}
+                      key={item.id}
+                      href={`#${item.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick(item.id);
+                      }}
+                      className={cn(
+                        "relative px-3 sm:px-4 py-2 text-[13px] font-medium rounded-full transition-colors whitespace-nowrap duration-300",
+                        isActive
+                          ? "text-white"
+                          : "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100"
+                      )}
+                    >
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeNavBackground"
+                          className="absolute inset-0 bg-zinc-900 rounded-full shadow-sm"
+                          initial={false}
+                          transition={{
+                            type: "spring",
+                            stiffness: 380,
+                            damping: 30,
+                          }}
+                        />
+                      )}
+                      <span className="relative z-10">{item.label}</span>
+                    </a>
+                  );
+                })}
+              </div>
+
+              {/* Desktop Right Menu Button */}
+              <div className="hidden md:block">
+                {endIndex < NAV_ITEMS.length - 1 && (
+                  <div className="relative" ref={rightMenuRef}>
+                    <button
+                      onClick={() => setRightMenuOpen(!rightMenuOpen)}
+                      className={cn(
+                        "p-2 text-zinc-400 hover:text-zinc-900 transition-colors rounded-full hover:bg-zinc-100 flex items-center justify-center",
+                        rightMenuOpen && "bg-zinc-100 text-zinc-900"
+                      )}
+                      aria-label="Next sections"
+                    >
+                      <MoreHorizontal className="w-4 h-4" />
+                    </button>
+                    {rightMenuOpen && (
+                      <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-zinc-200 py-2 flex flex-col gap-1 z-50">
+                        {rightHiddenItems.map((item) => (
+                          <a
+                            key={item.id}
+                            href={`#${item.id}`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleNavClick(item.id);
+                            }}
+                            className="px-4 py-2 text-[13px] font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-all text-left mx-2 rounded-md"
+                          >
+                            {item.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
           </nav>
 

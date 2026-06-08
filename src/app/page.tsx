@@ -49,7 +49,7 @@ export default function Presentation() {
       <Sidebar />
 
       {/* Main Content Area - Full height scrolling container with snap */}
-      <main id="main-scroll" className="w-full h-[100dvh] overflow-y-auto snap-y snap-mandatory scroll-smooth">
+      <main id="main-scroll" className="w-full h-[100dvh] overflow-y-auto snap-y snap-mandatory scroll-smooth relative">
           <Slide id="introduction">
             <FadeIn><Hero /></FadeIn>
           </Slide>
