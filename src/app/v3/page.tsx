@@ -73,7 +73,7 @@ export default function PresentationV3() {
           </Slide>
 
           <Slide id="transition-3">
-            <FadeIn><StoryTransition text="Our growth plan is built on four strategic pillars." /></FadeIn>
+            <FadeIn><StoryTransition text="Our growth plan is built on three strategic pillars." /></FadeIn>
           </Slide>
 
           <Slide id="four-pillars">

@@ -5,17 +5,17 @@ import { ShieldCheck, TrendingUp, MapPin, MousePointerClick } from "lucide-react
 const pillars = [
   {
     icon: <ShieldCheck className="w-6 h-6" />,
-    title: "1. Technical Foundation",
+    title: "1. Technical\nFoundation",
     description: "Resolving crawlability issues and establishing a robust site architecture.",
   },
   {
     icon: <TrendingUp className="w-6 h-6" />,
-    title: "2. Category Expansion",
+    title: "2. Category\nExpansion",
     description: "Programmatically scaling indexable paths to capture long-tail demand.",
   },
   {
     icon: <MousePointerClick className="w-6 h-6" />,
-    title: "3. Conversion Optimization",
+    title: "3. Conversion\nOptimization",
     description: "Removing friction from the user journey to maximize revenue per session.",
   },
 ];
@@ -37,7 +37,7 @@ export function FourPillars() {
               {pillar.icon}
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-zinc-900" suppressHydrationWarning>{pillar.title}</h3>
+              <h3 className="text-xl font-semibold text-zinc-900 whitespace-pre-line" suppressHydrationWarning>{pillar.title}</h3>
               <p className="mt-2 text-sm text-zinc-500 leading-relaxed" suppressHydrationWarning>
                 {pillar.description}
               </p>

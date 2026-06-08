@@ -29,12 +29,6 @@ export function Roadmap() {
                 </h4>
                 <p className="text-sm text-zinc-600 mt-2 leading-relaxed">Identify and resolve critical crawlability blockers, parameter handling issues, and indexation bloat.</p>
               </div>
-              <div className="p-5 border border-zinc-200 rounded-xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                <h4 className="font-semibold text-zinc-900 flex items-center gap-2 text-base">
-                  <CheckCircle2 className="w-4 h-4 text-[#ED0000]" /> High-Yield Optimizations
-                </h4>
-                <p className="text-sm text-zinc-600 mt-2 leading-relaxed">Execute immediate metadata and schema updates on high-margin product categories to drive short-term revenue.</p>
-              </div>
             </div>
           </div>
         </div>
@@ -49,15 +43,15 @@ export function Roadmap() {
             <div className="space-y-5">
               <div className="p-5 border border-zinc-200 rounded-xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                 <h4 className="font-semibold text-zinc-900 flex items-center gap-2 text-base">
-                  <CheckCircle2 className="w-4 h-4 text-[#ED0000]" /> PLP Generation
+                  <CheckCircle2 className="w-4 h-4 text-[#ED0000]" /> High-Yield Optimizations
                 </h4>
-                <p className="text-sm text-zinc-600 mt-2 leading-relaxed">Deploy programmatic landing pages targeting high-intent, long-tail queries identified in the semantic analysis.</p>
+                <p className="text-sm text-zinc-600 mt-2 leading-relaxed">Execute immediate metadata and schema updates on high-margin product categories to drive short-term revenue.</p>
               </div>
               <div className="p-5 border border-zinc-200 rounded-xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                 <h4 className="font-semibold text-zinc-900 flex items-center gap-2 text-base">
-                  <CheckCircle2 className="w-4 h-4 text-[#ED0000]" /> UK Localization
+                  <CheckCircle2 className="w-4 h-4 text-[#ED0000]" /> PLP Generation
                 </h4>
-                <p className="text-sm text-zinc-600 mt-2 leading-relaxed">Align taxonomy and on-page content strictly with UK search terminology and behavioral patterns.</p>
+                <p className="text-sm text-zinc-600 mt-2 leading-relaxed">Deploy programmatic landing pages targeting high-intent, long-tail queries identified in the semantic analysis.</p>
               </div>
             </div>
           </div>

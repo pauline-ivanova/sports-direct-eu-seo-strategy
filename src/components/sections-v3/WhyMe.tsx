@@ -6,24 +6,24 @@ export function WhyMe() {
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-3xl font-bold tracking-tight text-zinc-900" suppressHydrationWarning>Why Polina Ivanova?</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-zinc-900" suppressHydrationWarning>Why Me?</h2>
         <p className="mt-4 text-zinc-500 text-lg">
-          Qualifications and strategic fit for execution.
+          Aligning expertise with enterprise objectives.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div className="lg:col-span-7 flex flex-col">
           <div className="flex-1 p-8 bg-zinc-50 border border-zinc-200 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-            <h3 className="text-xl font-semibold text-zinc-900 mb-6">Core Competencies</h3>
+            <h3 className="text-xl font-semibold text-zinc-900 mb-6">Strategic Alignment</h3>
             <ul className="space-y-6">
               <li className="flex gap-4 items-start">
                 <div className="mt-1 shrink-0">
                   <CheckCircle2 className="w-6 h-6 text-[#ED0000]" />
                 </div>
                 <div>
-                  <span className="font-bold text-zinc-900 text-base">Commercial SEO Integration</span>
-                  <p className="text-sm text-zinc-600 mt-2 leading-relaxed">Proven track record of aligning technical SEO initiatives with direct revenue generation, prioritizing ROI over vanity metrics.</p>
+                  <span className="font-bold text-zinc-900 text-base">Commercial SEO Leadership</span>
+                  <p className="text-sm text-zinc-600 mt-2 leading-relaxed">Translating technical architecture into measurable P&L impact. I prioritize revenue velocity and market share over vanity metrics.</p>
                 </div>
               </li>
               <li className="flex gap-4 items-start">
@@ -31,8 +31,8 @@ export function WhyMe() {
                   <CheckCircle2 className="w-6 h-6 text-[#ED0000]" />
                 </div>
                 <div>
-                  <span className="font-bold text-zinc-900 text-base">UK Market Expertise</span>
-                  <p className="text-sm text-zinc-600 mt-2 leading-relaxed">Deep understanding of UK consumer search behavior, semantic nuances, and competitive dynamics in the retail sector.</p>
+                  <span className="font-bold text-zinc-900 text-base">Native Pan-European Expertise</span>
+                  <p className="text-sm text-zinc-600 mt-2 leading-relaxed">Fluent in 5 languages (EN, DE, ES, RU, CA), ensuring authentic semantic localization and seamless alignment across cross-border teams.</p>
                 </div>
               </li>
               <li className="flex gap-4 items-start">
@@ -40,8 +40,8 @@ export function WhyMe() {
                   <CheckCircle2 className="w-6 h-6 text-[#ED0000]" />
                 </div>
                 <div>
-                  <span className="font-bold text-zinc-900 text-base">Enterprise Architecture Experience</span>
-                  <p className="text-sm text-zinc-600 mt-2 leading-relaxed">Extensive experience managing complex, large-scale e-commerce architectures, mitigating risk while scaling programmatic solutions.</p>
+                  <span className="font-bold text-zinc-900 text-base">Enterprise Ecosystem Governance</span>
+                  <p className="text-sm text-zinc-600 mt-2 leading-relaxed">Experience managing multilingual websites, complex site structures, migrations and scalable SEO frameworks.</p>
                 </div>
               </li>
             </ul>
