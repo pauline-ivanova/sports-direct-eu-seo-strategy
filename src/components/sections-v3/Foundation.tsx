@@ -5,8 +5,8 @@ import { SectionBadge } from "@/components/ui/SectionBadge";
 import { DataInsight } from "@/components/ui/DataInsight";
 
 const data = [
-  { name: "Brand Search", value: 55 },
-  { name: "Non-Brand Search", value: 45 },
+  { name: "Branded", value: 55 },
+  { name: "Non-Branded", value: 45 },
 ];
 const COLORS = ["#18181b", "#ED0000"];
 
@@ -14,10 +14,10 @@ export function Foundation() {
   return (
     <div className="space-y-6">
       <div>
-        <SectionBadge section="Part 1" title="The Foundation" />
+        <SectionBadge section="Part 1" title="Context & Philosophy" />
         <h2 className="text-3xl font-bold tracking-tight text-zinc-900" suppressHydrationWarning>Current UK Baseline</h2>
         <p className="mt-4 text-zinc-500 text-lg max-w-2xl">
-          Analyzing our existing traffic profile to identify immediate opportunities for commercial optimization.
+          With a formidable organic footprint already in place, our focus shifts from building authority to maximizing its commercial impact.
         </p>
       </div>
 
@@ -26,12 +26,20 @@ export function Foundation() {
         <div className="lg:col-span-7 flex flex-col gap-3">
           <div className="grid grid-cols-2 gap-3">
             <div className="p-4 border border-zinc-200 rounded-2xl bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-center">
-              <div className="text-xs text-zinc-500 mb-1">Domain Authority</div>
-              <div className="text-3xl font-bold text-zinc-900">High</div>
+              <div className="text-xs text-zinc-500 mb-1">Authority Score</div>
+              <div className="text-3xl font-bold text-zinc-900">80</div>
             </div>
             <div className="p-4 border border-zinc-200 rounded-2xl bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-center">
-              <div className="text-xs text-zinc-500 mb-1">UK Monthly Traffic</div>
+              <div className="text-xs text-zinc-500 mb-1">Organic Traffic</div>
               <div className="text-3xl font-bold text-zinc-900">10.5M</div>
+            </div>
+            <div className="p-4 border border-zinc-200 rounded-2xl bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-center">
+              <div className="text-xs text-zinc-500 mb-1">Backlinks</div>
+              <div className="text-3xl font-bold text-zinc-900">13.1M</div>
+            </div>
+            <div className="p-4 border border-zinc-200 rounded-2xl bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-center">
+              <div className="text-xs text-zinc-500 mb-1">Ref. Domains</div>
+              <div className="text-3xl font-bold text-zinc-900">22.9K</div>
             </div>
             <div className="col-span-2 p-4 border border-zinc-200 rounded-2xl bg-white shadow-sm flex flex-row items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               <div className="flex-1 h-24">
@@ -57,24 +65,24 @@ export function Foundation() {
               <div className="flex-1 flex flex-col gap-3 pl-4 border-l border-zinc-100">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-zinc-900" />
-                  <span className="text-sm font-medium text-zinc-700">Navigational (Brand) (55%)</span>
+                  <span className="text-sm font-medium text-zinc-700">Branded (55%)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-[#ED0000]" />
-                  <span className="text-sm font-medium text-zinc-700">Transactional (Non-Brand) (45%)</span>
+                  <span className="text-sm font-medium text-zinc-700">Non-Branded (45%)</span>
                 </div>
               </div>
             </div>
           </div>
           <div className="text-xs text-zinc-400 px-2 mt-2 whitespace-nowrap">
-            *Data Source: Semrush UK
+            *Data Source: Semrush
           </div>
         </div>
 
         {/* Right: Takeaway */}
         <div className="lg:col-span-5 flex">
           <DataInsight 
-            insight="The domain commands significant authority. With 45% of traffic originating from non-brand queries, the primary objective is to optimize the conversion funnel for these high-intent sessions." 
+            insight="With 13.1M backlinks and an Authority Score of 80, our foundation is rock-solid. Combined with a healthy 45% non-branded traffic share, the priority shifts from building trust to aggressively converting this massive top-of-funnel visibility into revenue." 
             layout="col"
             className="h-full justify-center"
           />
